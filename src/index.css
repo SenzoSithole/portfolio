@@ -25,8 +25,12 @@ body {
       transform: translateX(-100%);
     }
     100% {
-      transform: translateY(250%);
+      transform: translateX(250%);
     }
+  }
+
+  .animate-loading-bar {
+    animation: loading 0.8s ease infinite;
   }
 
   .animate-blink {
