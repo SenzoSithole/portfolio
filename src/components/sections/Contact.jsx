@@ -13,39 +13,42 @@ export const Contact = () => {
           </p>
           <form className="space-y-6" autoComplete="off">
             <div className="relative">
-              <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
+              <label htmlFor="name" className="block text-gray-300 font-bold mb-2">
                 Name
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
+                placeholder="Your Name"
                 required
-                className="bg-white/2 border border-white/20 rounded w-full py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/10"
+                className="placeholder:opacity-45 bg-white/2 border border-white/20 rounded w-full py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/10"
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+              <label htmlFor="email" className="block text-gray-300 font-bold mb-2">
                 Email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
+                placeholder="example@gmail.com"
                 required
-                className="bg-white/2 border border-white/20 rounded w-full py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/10  "
+                className="placeholder:opacity-45 bg-white/2 border border-white/20 rounded w-full py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/10  "
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="message" className="block text-gray-700 font-bold mb-2">
+              <label htmlFor="message" className="block text-gray-300 font-bold mb-2">
                 Message
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows="4"
+                placeholder="Your Message"
                 required
-                className="bg-white/2 border border-white/20 rounded w-full py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/10"
+                className="placeholder:opacity-45 bg-white/2 border border-white/20 rounded w-full py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/10"
               ></textarea>
             </div>
             <button

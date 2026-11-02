@@ -9,7 +9,7 @@ export const Home = () => {
             Hi, My Name is Senzo.
           </h1>
 
-          <p className="text-lg text-gray-400 max-w-lg mx-auto mb-10">
+          <p className="text-lg text-gray-400 max-w-200 mx-auto mb-10">
             Wits Computer Science graduate (2025) with three government quality assurance contracts
             and two Alibaba Cloud certifications earned independently during studies. Proficient in
             Java, Python, and JavaScript; actively building toward full-stack web development with
