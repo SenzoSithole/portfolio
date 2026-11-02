@@ -1,0 +1,65 @@
+import { motion } from "framer-motion";
+
+const NavLink = ({ href, children }) => (
+  <motion.a
+    href={href}
+    className="relative text-gray-300 hover:text-white px-4 py-1.5 rounded-full text-sm"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <motion.span
+      className="absolute inset-0 bg-white/10 rounded-full -z-10"
+      initial={{ opacity: 0 }}
+      whileHover={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    />
+    {children}
+  </motion.a>
+);
+
+export const Navbar = ({ menuOpen, setMenuOpen }) => {
+  return (
+    <>
+      <svg className="hidden">
+        <filter id="glass-distortion">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.008 0.008"
+            numOctaves="2"
+            seed="4"
+            result="noise"
+          />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="100" />
+        </filter>
+      </svg>
+
+      <motion.nav
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        style={{ backdropFilter: "url(#glass-distortion) saturate(150%)" }}
+        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-3xl
+                    border border-white/10 shadow-lg shadow-black/20
+                   rounded-full px-6 py-3 flex items-center justify-between"
+      >
+        <a href="#home" className="font-mono text-lg font-bold text-white">
+          senzo<span className="text-blue-500">.dev</span>
+        </a>
+
+        <div
+          className="w-7 h-5 relative cursor-pointer z-40 md:hidden text-white"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          &#9776;
+        </div>
+
+        <div className="hidden md:flex items-center gap-1">
+          <NavLink href="#home">Home</NavLink>
+          <NavLink href="#about">About</NavLink>
+          <NavLink href="#projects">Projects</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
+        </div>
+      </motion.nav>
+    </>
+  );
+};

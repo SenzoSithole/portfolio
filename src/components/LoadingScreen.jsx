@@ -28,10 +28,10 @@ export const LoadingScreen = ({ onComplete }) => {
         {text} <span className="animate-blink ml-1"> | </span>
       </div>
 
-      {/* Loading bar animation code does not work as expected , need to debug */}
+      {/* Loading bar animation code does not work as intended , need to debug */}
 
       <div className="w-[200px] h-[2px] bg-gray-800 rounded relative overflow-hidden">
-        <div className="w-[40%] h-full bg-green-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar">
+        <div className="w-[40%] h-full bg-purple-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar">
           {""}
         </div>
       </div>
