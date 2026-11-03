@@ -1,6 +1,35 @@
+import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
+import emailjs from "emailjs-com";
 
 export const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_PUBLIC_KEY
+      )
+      .then((result) => {
+        console.log(result.text);
+        alert("Message Sent!");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      })
+      .catch(() => alert("Something went wrong, please try again!"));
+  };
+
   return (
     <section id="contact" className="min-h-screen flex items-center justify-center  py-20">
       <RevealOnScroll>
@@ -11,7 +40,7 @@ export const Contact = () => {
           <p className="text-center mb-8">
             Have a question or want to work together? Feel free to reach out!
           </p>
-          <form className="space-y-6" autoComplete="off">
+          <form className="space-y-6" autoComplete="off" onSubmit={handleSubmit}>
             <div className="relative">
               <label htmlFor="name" className="block text-gray-300 font-bold mb-2">
                 Name
@@ -22,6 +51,8 @@ export const Contact = () => {
                 name="name"
                 placeholder="Your Name"
                 required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="placeholder:opacity-45 bg-white/2 border border-white/20 rounded w-full py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/10"
               />
             </div>
@@ -35,6 +66,8 @@ export const Contact = () => {
                 name="email"
                 placeholder="example@gmail.com"
                 required
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="placeholder:opacity-45 bg-white/2 border border-white/20 rounded w-full py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/10  "
               />
             </div>
@@ -48,12 +81,14 @@ export const Contact = () => {
                 rows="4"
                 placeholder="Your Message"
                 required
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="placeholder:opacity-45 bg-white/2 border border-white/20 rounded w-full py-3 px-4 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/10"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="cursor-pointer bg-blue-500/80 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_10px_20px_-10px_rgba(59,130,246,0.5)] focus:outline-none focus:shadow-outline"
             >
               Send Message
             </button>

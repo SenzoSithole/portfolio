@@ -9,7 +9,7 @@ export const Projects = () => {
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition">
+            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-0.5 transition-all hover:border-blue-500 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition">
               <h3 className="text-xl font-bold mb-2">Web Calculator</h3>
               <p className="text-gray-300 mb-4">
                 A simple calculator built using HTML, CSS, and vanilla JavaScript. This project was
@@ -29,19 +29,19 @@ export const Projects = () => {
               <div className=" flex space-x-4 mt-4">
                 <a
                   href="https://github.com/SenzoSithole/Web-Calculator"
-                  className="bg-blue-500/30 hover:bg-blue-500 text-white py-2 px-3 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                  className="cursor-pointer bg-blue-500/30 hover:bg-blue-500 text-white py-2 px-3 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
                 >
                   View Github
                 </a>
                 <a
                   href="https://senzosithole.github.io/Web-Calculator/"
-                  className="bg-blue-500/30 hover:bg-blue-500 text-white py-2 px-3 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                  className="cursor-pointer bg-blue-500/30 hover:bg-blue-500 text-white py-2 px-3 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
                 >
                   View Demo
                 </a>
               </div>
             </div>
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition">
+            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-0.5 transition-all hover:border-blue-500 hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition">
               <h3 className="text-xl font-bold mb-2">NEXUS MAZE</h3>
               <p className="text-gray-300 mb-4">
                 NEXUS MAZE is a first/third-person 3D maze game built with Three.js and Cannon-es.
@@ -62,13 +62,13 @@ export const Projects = () => {
               <div className=" flex space-x-4 mt-4">
                 <a
                   href="https://github.com/SenzoSithole/Maze-Game"
-                  className="bg-blue-500/30 hover:bg-blue-500 text-white py-2 px-3 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                  className="cursor-pointer bg-blue-500/30 hover:bg-blue-500 text-white py-2 px-3 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
                 >
                   View Github
                 </a>
                 <a
                   href="https://senzosithole.github.io/Maze-Game/"
-                  className="bg-blue-500/30 hover:bg-blue-500 text-white py-2 px-3 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                  className="cursor-pointer bg-blue-500/30 hover:bg-blue-500 text-white py-2 px-3 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
                 >
                   View Demo
                 </a>
